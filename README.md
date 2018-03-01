@@ -9,7 +9,7 @@ of activitiy on social media, prices tend to jump as many people, esspecially 'n
 To run the project, you must first edit the config.json file to add a registered Twitter app consumer_key/secret and a Twitter app 
 access_token/secret. Once done, navigate to the 'bin' folder and run tweepy_app.py. 
 
-#Prerequisites
+# Prerequisites
 Must have Tweepy, JSON, Matplotlib, and Pickle libraries installed and added to your PYTHONPATH.
 
 # Built With
