@@ -8,7 +8,7 @@ import pickle
 import requests
 from datetime import datetime
 
-MAX_TWEETS = 100
+MAX_TWEETS = 200
 TOP_X = 5
 
 
@@ -37,13 +37,13 @@ def create_joint_plots(saved_coins_data):
         ax = fig.add_subplot(111, label="1")
         ax2 = fig.add_subplot(111, label="2", frame_on=False)
 
-        ax.plot(coin.dates, coin.vels, color="C0")
+        ax.plot(coin.get_dates(), coin.get_vels(), color="C0")
         ax.set_xlabel("Datetime", color="black")
         ax.set_ylabel("Tweet Velocity (twt/min)", color="C0")
         ax.tick_params(axis='y', colors="C0")
         ax.grid(True)
 
-        ax2.plot(coin.dates, coin.mkt_caps, color="C1")
+        ax2.plot(coin.get_dates(), coin.get_mkt_caps(), color="C1")
         ax2.set_ylabel('Price (USD)', color="C1")
         ax2.yaxis.tick_right()
         ax2.yaxis.set_label_position('right')
@@ -58,7 +58,6 @@ def create_joint_plots(saved_coins_data):
         plt.tight_layout(w_pad=0.5)
         plt.savefig('../outputs/%s_vel_vs_time.png' % coin.symbol)
         plt.close()
-
 
 
 saved_coins_data = []
